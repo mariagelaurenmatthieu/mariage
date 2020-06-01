@@ -44,6 +44,7 @@ body::after {
     flex: 1;
     color:var(--mblue);
     opacity:0.6;
+    cursor:pointer;
 }
 #scrolldown:hover {
     opacity:1;
