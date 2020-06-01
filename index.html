@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -13,7 +15,64 @@
   </head>
   <body>
     <noscript>Le JavaScript n'est pas autorisé sur votre navigateur.</noscript>
-    <div>
+    <div class="fullscreen flex">
+      <img id="logo" src="resources/logo.png" alt="Lauren et Matthieu se marient le 10 Avril 2021">
+      <div style="flex:1;">
+        <div id="contentcountdown" class="flex">
+          <div id="countdown"></div>
+          <div id="content">...avant notre mariage !</div>
+          <div id="scrolldown" class="fas fa-arrow-down"></div>
+        </div>
+      </div>
     </div>
+    <div class="fullscreen flex">
+      <div id="video">
+        <video style="video" controls>
+          <source src="resources/SaveTheDate.mp4" type="video/mp4">
+          Votre navigateur ne peut pas lire les vidéos.
+        </video>
+        </div>
+      </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="jquery.countdown.min.js"></script>
+  <script>
+  function scrolldown() {
+    var elt = document.body;
+    elt.scrollIntoView({behavior:'smooth', block:'end'});
+  }
+  function scrollup() {
+    var elt = document.body;
+    elt.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+$(function() {
+  //Countdown
+      $('#countdown').countdown('2021/04/10').on('update.countdown', function(event) {
+      var $this = $(this).html(event.strftime(''
+        + '<span>%-D</span> jour%!D '));
+        //var $this = $(this).html(event.strftime(''
+        //+ '<span>%-w</span> semaine%!w '
+        //+ '<span>%-d</span> jour%!d '
+        //+ '<span>%H</span> heure%!H '
+        //+ '<span>%M</span> minute%!M '
+        //+ '<span>%S</span> seconde%!S'));
+  });
+  //Scrolldown
+  $('#scrolldown').click(scrolldown);
+  //Catch arrow keyboard
+  document.onkeydown = function(e) {
+    e = e || window.event;
+    if (e.keyCode == '38') {
+      //Arrow up
+      scrollup();
+      e.preventDefault();
+    }
+    if (e.keyCode == '40') {
+      //Arrow down
+      scrolldown();
+      e.preventDefault();
+    }
+  };
+});
+  </script>
 </html>

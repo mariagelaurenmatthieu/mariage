@@ -1,0 +1,69 @@
+:root {
+    --mblue:#5e8be2;
+}
+* {
+    transition:all 0.3s;
+}
+body {
+    text-align:center;
+    background-color:#001a7c;
+    position: relative;
+    color:#FFF;
+    font-family: cursive;
+    font-size:30px;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+body::after {
+    content: "";
+    background-image: url("resources/stars_transparent.png");
+    background-size:200px;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#logo {
+    margin: 2em 0;
+}
+
+#countdown {
+    color:var(--mblue);
+    font-size:2em;
+    flex: 2;
+}
+
+#content {
+    flex: 4;
+}
+#scrolldown {
+    flex: 1;
+    color:var(--mblue);
+    opacity:0.6;
+}
+#scrolldown:hover {
+    opacity:1;
+}
+.fullscreen {
+    width: 100vw;
+    height:100vh;
+}
+.flex {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+#video {
+    align-self:center;
+    justify-content:center;
+}
+#contentcountdown {
+    justify-content: center;
+    height:100%;
+}
