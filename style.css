@@ -42,12 +42,11 @@ body::after {
 }
 #scrolldown {
     flex: 1;
-    color:var(--mblue);
-    opacity:0.6;
+    color:white;
     cursor:pointer;
 }
 #scrolldown:hover {
-    opacity:1;
+    color:var(--mblue);
 }
 .fullscreen {
     width: 100vw;
