@@ -75,6 +75,37 @@ body::after {
 #content {
     flex: 1;
 }
+#lipsynclink {
+    flex: 1;
+    min-width:300px;
+}
+#lipsynclink > a {
+    color: var(--mblue);
+    text-decoration:none;
+    vertical-align:middle;
+    display:inline;
+    transition:all 0.5s;
+}
+#lipsynclink > a > div {
+    vertical-align:middle;
+    display:inline;
+    transition:all 0.5s;
+}
+#lipsynclink > a > i {
+    margin-right:1em;
+    font-size:1.5em;
+    vertical-align:middle;
+    display:inline;
+    transition:all 0.5s;
+}
+#lipsynclink:hover > a > i {
+    font-size:5em;
+    margin: 0em;
+}
+#lipsynclink:hover > a > div {
+    font-size:0em;
+    color:transparent;
+}
 #scrolldown {
     flex: 1;
     color:white;
