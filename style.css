@@ -188,14 +188,37 @@ a:hover > .fa-at {
     animation:rolling 0.7s infinite linear;
 }
 
+#new {
+    width: 250px;
+    cursor:pointer;
+}
+
 #video {
     align-self:center;
     justify-content:center;
     max-width:80%;
 }
+
 #video video {
-    width:100%;
+    height:60vh;
 }
+
+
+#oldlink {
+    transition:0.3s ease-out;
+    font-size:0.7em;
+    color:var(--mblue);
+    vertical-align:middle;
+}
+#oldlink:hover {
+    color:white;
+    font-size:0.8em;
+}
+#oldlink > span {
+    margin-right:0.5em;
+    vertical-align:middle;
+}
+
 #contentcountdown {
     justify-content: center;
     height:100%;
